@@ -1,0 +1,23 @@
+var pairs =
+{
+"create":{"related":1,"<related-links>":1}
+,"related":{"topics":1,"topic":1,"items":1}
+,"topics":{"links":1}
+,"<related-links>":{"section":1}
+,"section":{"dita":1}
+,"dita":{"source":1}
+,"source":{"content":1}
+,"content":{"sure":1}
+,"sure":{"stationery":1}
+,"stationery":{"configuration":1}
+,"configuration":{"applies":1}
+,"applies":{"setting":1}
+,"setting":{"define":1}
+,"define":{"define":1,"output":1}
+,"output":{"related":1}
+,"topic":{"option":1}
+,"option":{"appropriate":1}
+,"appropriate":{"related":1}
+,"items":{"style":1}
+}
+;Search.control.loadWordPairs(pairs);

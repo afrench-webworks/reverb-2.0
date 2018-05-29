@@ -1,0 +1,26 @@
+div.Normal, caption.Normal
+{
+  font-family: Calibri;
+  font-size: 11pt;
+  margin-bottom: 8pt;
+}
+
+div.Heading_1, caption.Heading_1
+{
+  color: #2E74B5;
+  font-family: "Calibri Light";
+  font-size: 16pt;
+  margin-bottom: 0pt;
+  margin-top: 12pt;
+}
+
+table.Table_Normal
+{
+  border-collapse: collapse;
+  margin-left: -5.4pt;
+  padding-bottom: 0pt;
+  padding-left: 5.4pt;
+  padding-right: 5.4pt;
+  padding-top: 0pt;
+}
+

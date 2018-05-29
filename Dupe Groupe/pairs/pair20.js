@@ -1,0 +1,20 @@
+var pairs =
+{
+"context-sensitive":{"help":1}
+,"help":{"topics":1,"topic":1}
+,"topics":{"(dita)":1,"epublisher":1}
+,"(dita)":{"section":1}
+,"section":{"explains":1,"demonstrates":1}
+,"explains":{"create":1}
+,"create":{"context-sensitive":1}
+,"epublisher":{"section":1,"source":1}
+,"demonstrates":{"creation":1}
+,"creation":{"context-sensitive":1}
+,"topic":{"using":1}
+,"using":{"sample":1}
+,"sample":{"exploring":1}
+,"exploring":{"epublisher":1}
+,"source":{"documents":1}
+,"documents":{"stationery":1}
+}
+;Search.control.loadWordPairs(pairs);

@@ -1,0 +1,19 @@
+var pairs =
+{
+"creating":{"first":1}
+,"first":{"expand\u002Fcollapse":1}
+,"expand\u002Fcollapse":{"section":1,"sample":1,"sections":1}
+,"section":{"(dita)":1,"described":1,"steps":1}
+,"(dita)":{"previous":1}
+,"previous":{"section":1}
+,"described":{"steps":1}
+,"steps":{"involved":1,"impolementing":1}
+,"involved":{"implementing":1}
+,"implementing":{"expand\u002Fcollapse":1}
+,"sample":{"stationery":1}
+,"stationery":{"section":1}
+,"impolementing":{"expand\u002Fcollapse":1}
+,"sections":{"dita":1}
+,"dita":{"documents":1}
+}
+;Search.control.loadWordPairs(pairs);

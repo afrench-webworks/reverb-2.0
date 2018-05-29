@@ -1,0 +1,405 @@
+/*~~~~~ COLORS ~~~~~*/
+/*~~~~~~~~~~~~~~~~~~*/
+/* custom colors                               */
+/*                                             */
+/* define custom values here for easy tracking */
+/* NOTE: Gradients as background colors are supported through linear/radial-gradient property values.*/
+/*       It is suggested to put the gradient value only where it is needed, as it will cause errors  */
+/*       if it is used in the darken() or lighten() functions.                                       */
+/*       If a gradient value is set for a $_layout_color property, you must remove all darken() and  */
+/*       lighten() calls that derive from the gradient, or there will be no color output where those */
+/*       properties are used.                                                                        */
+/*                                                                                                   */
+/*       Usage documentation for Gradients: https://www.w3schools.com/css/css3_gradients.asp         */
+/* layout colors: set these for a quick application to the output.                                   */
+/*                                                                                                   */
+/* Defaults for structure items */
+/*                              */
+/* Mini TOC */
+/*          */
+/* Related Topics */
+/*                */
+/* Search Result Highlight */
+/*                         */
+/* colors for specific items */
+/*                           */
+/* toolbar */
+/* menu (nav & toc/index) */
+/* page */
+/* disqus */
+/* search */
+/* footer */
+/* back-to-top button */
+/* progress bar */
+/* modal (cookies disabled message) */
+/* unsupported browser */
+/* no javascript warning */
+/*~~~~~ FONTS ~~~~~*/
+/*~~~~~~~~~~~~~~~~~*/
+/*
+ * toolbar
+*/
+/*
+ * menu (nav & toc/index)
+*/
+/*
+ * page
+*/
+/*
+ * mini toc
+*/
+/*
+ * related topics
+*/
+/*
+ * search
+*/
+/*
+ * footer
+*/
+/*
+ * unsupported browser
+*/
+/*
+ * modal (cookies disabled message)
+*/
+/*~~~~~ ICONS ~~~~~*/
+/*~~~~~~~~~~~~~~~~~*/
+/*
+  This file contains the character codes applied to the icons in the output.
+
+  Usage: Find the character code of the icon to be used in the font-awesome cheatsheet.
+         The 4-character code is next to it's respective icon.
+         (ex: f002 for search)
+         Apply to variable value in quotes and a leading backslash
+         (ex: "\f002")
+
+  font-awesome cheatsheet: https://fontawesome.com/v4.7.0/cheatsheet/
+
+  The cheatsheet can also be found in the ePublisher Installation Directory at:
+
+  <Install Location>/WebWorks/ePublisher/<version>/Helpers/font-awesome/Font Awesome Cheatsheet.html
+*/
+/* toolbar */
+/* menu */
+/* page */
+/* footer */
+/* search */
+/* modal (cookies disabled message) */
+/*~~~~~ SIZING ~~~~~*/
+/*~~~~~~~~~~~~~~~~~~*/
+/*
+ * menu
+*/
+/*
+ * toolbar
+ *
+ * $toolbar-height should be equal or greater than all other
+ * values or the layout will produce unexpected results
+*/
+/*
+ * toolbar - logo section (Menu Button & Logo)
+*/
+/*
+ * toolbar - search section (Search Scope Selector, Search Input, & Search Button)
+*/
+/*
+ * toolbar - button section (Previous Button, Next Button, Home Button)
+*/
+/*
+ * page
+*/
+/*
+ * mini toc
+*/
+/*
+ * related topics
+*/
+/*
+ * search
+*/
+/*
+ * footer
+*/
+/*
+ * unsupported browser
+*/
+/*
+ * calculated sizes
+ *
+ * the values in the below section are calculated & dependent upon multiple above values.
+*/
+/*
+ * toolbar
+*/
+/*
+ * menu
+*/
+/*
+ * page
+*/
+/*~~~~~ COLORS ~~~~~*/
+/*~~~~~~~~~~~~~~~~~~*/
+/* custom colors                               */
+/*                                             */
+/* define custom values here for easy tracking */
+/* NOTE: Gradients as background colors are supported through linear/radial-gradient property values.*/
+/*       It is suggested to put the gradient value only where it is needed, as it will cause errors  */
+/*       if it is used in the darken() or lighten() functions.                                       */
+/*       If a gradient value is set for a $_layout_color property, you must remove all darken() and  */
+/*       lighten() calls that derive from the gradient, or there will be no color output where those */
+/*       properties are used.                                                                        */
+/*                                                                                                   */
+/*       Usage documentation for Gradients: https://www.w3schools.com/css/css3_gradients.asp         */
+/* layout colors: set these for a quick application to the output.                                   */
+/*                                                                                                   */
+/* Defaults for structure items */
+/*                              */
+/* Mini TOC */
+/*          */
+/* Related Topics */
+/*                */
+/* Search Result Highlight */
+/*                         */
+/* colors for specific items */
+/*                           */
+/* toolbar */
+/* menu (nav & toc/index) */
+/* page */
+/* disqus */
+/* search */
+/* footer */
+/* back-to-top button */
+/* progress bar */
+/* modal (cookies disabled message) */
+/* unsupported browser */
+/* no javascript warning */
+/*~~~~~ SIZING ~~~~~*/
+/*~~~~~~~~~~~~~~~~~~*/
+/*
+ * menu
+*/
+/*
+ * toolbar
+ *
+ * $toolbar-height should be equal or greater than all other
+ * values or the layout will produce unexpected results
+*/
+/*
+ * toolbar - logo section (Menu Button & Logo)
+*/
+/*
+ * toolbar - search section (Search Scope Selector, Search Input, & Search Button)
+*/
+/*
+ * toolbar - button section (Previous Button, Next Button, Home Button)
+*/
+/*
+ * page
+*/
+/*
+ * mini toc
+*/
+/*
+ * related topics
+*/
+/*
+ * search
+*/
+/*
+ * footer
+*/
+/*
+ * unsupported browser
+*/
+/*
+ * calculated sizes
+ *
+ * the values in the below section are calculated & dependent upon multiple above values.
+*/
+/*
+ * toolbar
+*/
+/*
+ * menu
+*/
+/*
+ * page
+*/
+/* ~~~~ FUNCTIONS ~~~~ */
+/*                     */
+/*~~~~~ BORDERS ~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~*/
+/*
+  DISCLAIMER: By default, border size properties do not conform with the other size properties of HTML.
+  This means that when a border is set on an element with a defined height or width, the final size of
+  an element will calculate to HEIGHT/WIDTH + BORDER WIDTH. This has been mitigated as much as possible
+  using the 'box-sizing: border-box' property, but there is always a possibility for some instances
+  where this will not work. (ex. An element with a border inside another element inside it with a border.
+  The toolbar in some skins is like this)
+
+  If widths in this file are to be changed, you understand that this may change the uniformity of the
+  layout, and that there may also be height and width properties that also need to be changed in
+  _sizes.scss to get the layout to line up properly.
+
+
+*/
+/* Toolbar */
+/*         */
+/* Toolbar - Logo Section */
+/*                        */
+/* Toolbar - Search Section */
+/*                          */
+/* Toolbar - Button Section */
+/*                          */
+/* Menu */
+/*      */
+/* Menu - TOC */
+/*            */
+/* Menu - Index */
+/*              */
+/* Page */
+/*      */
+/* Mini TOC */
+/*          */
+/* Search */
+/*        */
+/* Footer */
+/*        */
+/* Back to Top */
+/*             */
+/* Modal */
+/*       */
+body {
+  font-family: arial, sans_serif;
+  font-size: 12pt; }
+
+a:link {
+  color: #008bff; }
+  a:link:active {
+    color: #66b9ff; }
+
+a:visited {
+  color: #005399; }
+
+span.WebWorks_Number {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-indent: 0; }
+
+div.WebWorks_Table {
+  border: 1px solid #000000; }
+
+div.WebWorks_Table_Row {
+  clear: left; }
+
+div.WebWorks_Table_Cell {
+  float: left; }
+
+div.WebWorks_Table_End {
+  clear: both;
+  font-size: 1px; }
+
+div.WebWorks_MiniTOC {
+  font-family: arial, sans_serif;
+  font-size: 12pt;
+  margin: 20px;
+  padding: 0;
+  background: #eeeeee;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d5d5d5;
+  border-radius: 0px; }
+
+div.WebWorks_MiniTOC_Heading {
+  display: none; }
+
+dl.WebWorks_MiniTOC_List {
+  margin: 0;
+  padding: 0 0 0 16px; }
+
+div.WebWorks_MiniTOC > dl.WebWorks_MiniTOC_List {
+  padding-left: 0; }
+
+dl.WebWorks_MiniTOC_List > dd {
+  margin: 0;
+  padding: 0px 8px; }
+
+div.WebWorks_MiniTOC_Entry {
+  cursor: pointer;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: #d5d5d5;
+  border-radius: 0px; }
+
+div.WebWorks_MiniTOC > dl.WebWorks_MiniTOC_List > dd:first-child > div.WebWorks_MiniTOC_Entry {
+  border-width: 0; }
+
+div.WebWorks_MiniTOC_Entry:hover {
+  background: #008bff; }
+
+a.WebWorks_MiniTOC_Link:link {
+  color: #222222;
+  text-decoration: none; }
+
+a.WebWorks_MiniTOC_Link:visited {
+  color: #222222;
+  text-decoration: none; }
+
+div.WebWorks_MiniTOC_Entry:hover > a.WebWorks_MiniTOC_Link:link {
+  color: #fefefe; }
+
+div.WebWorks_MiniTOC_Entry:hover > a.WebWorks_MiniTOC_Link:visited {
+  color: #fefefe; }
+
+dl.Related_Topics_List {
+  margin: 0;
+  padding: 0; }
+
+dt.Related_Topics_Title {
+  font-weight: bold;
+  font-family: arial, sans_serif;
+  font-size: 12pt;
+  color: #222222;
+  padding: 0px; }
+
+dd.Related_Topics_Entry {
+  cursor: pointer;
+  font-family: arial, sans_serif;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0px 0px 0px 12px; }
+
+dd.Related_Topics_Entry a:link, dd.Related_Topics_Entry a:visited {
+  color: #008bff; }
+
+dd.Related_Topics_Entry:hover a:link, dd.Related_Topics_Entry:hover a:visited {
+  color: #66b9ff; }
+
+span#social_linkedin {
+  margin-right: 12pt;
+  vertical-align: -7px; }
+
+span#social_google_plus1 {
+  vertical-align: -7px; }
+
+.Search_Result_Highlight {
+  background-color: yellow; }
+
+#noscript_padding {
+  padding-top: 1.9em; }
+
+#noscript_warning {
+  font-family: arial, sans_serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+  text-align: center;
+  font-weight: bold;
+  color: #fefefe;
+  background-color: #ae0000;
+  padding: 5px 0 5px 0; }

@@ -1,0 +1,20 @@
+var pairs =
+{
+"popup":{"windows":1,"window":1}
+,"windows":{"(dita)":1,"epublisher":1}
+,"(dita)":{"section":1}
+,"section":{"explains":1}
+,"explains":{"create":1}
+,"create":{"popup":1}
+,"epublisher":{"provides":1,"source":1}
+,"provides":{"instructions":1}
+,"instructions":{"creating":1}
+,"creating":{"popup":1}
+,"window":{"using":1}
+,"using":{"sample":1}
+,"sample":{"exploring":1}
+,"exploring":{"epublisher":1}
+,"source":{"documents":1}
+,"documents":{"stationery":1}
+}
+;Search.control.loadWordPairs(pairs);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Sandbox</title>
+  </head>
+  <body>
+    <div class="container">
+      <p id="rainbow_me">Taste the rainbow! And many other cool things that you would do with a very very long sentence!</p>
+    </div>
+    
+    <script type="text/javascript">
+      var text = document.getElementById("rainbow_me").innerText;
+      var colors = ["#ff0602", "#ffb302", "#fce705", "#45db2e", "#0284ff", "#c605fc"];
+      var counter = 0;
+      
+      var changeColors = function (string, n) {
+        // split string
+        var stringArr = string.split("");
+        var elementArr = [];
+        
+        // create span elements of all characters
+        for (var i = 0; i < stringArr.length; i++) {
+          var span = document.createElement("span");
+          span.innerText = stringArr[i];
+          
+          if (stringArr[i] !== " ") {
+            span.style.color = colors[n];
+            n++;
+          }
+          
+          if (n >= colors.length) {
+            n = 0;
+          }
+          
+          elementArr[i] = span;
+        }
+        
+        // paste into p tag
+        var pElement = document.getElementById("rainbow_me");
+        pElement.innerText = "";
+        for (var i = 0; i < elementArr.length; i++) {
+          pElement.appendChild(elementArr[i]);
+        }
+      }
+    
+      window.onload = function () {
+        setInterval(function () {
+          changeColors(text, counter);
+          counter++;
+          if (counter >= colors.length) {
+            counter = 0;
+          }
+        }, 100);
+      }
+    </script>
+  </body>
+</html>

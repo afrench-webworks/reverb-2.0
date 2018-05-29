@@ -1,0 +1,21 @@
+var pairs =
+{
+"create":{"context-sensitive":1}
+,"context-sensitive":{"help":1}
+,"help":{"topic":1}
+,"locate":{"context-sensitive":1}
+,"topic":{"<prolog>":1,"insert":1,"want":1}
+,"<prolog>":{"element":1}
+,"element":{"topic":1,"within":1,"<othermeta>":1,"name":1,"topicalias":1}
+,"insert":{"<metadata>":1}
+,"<metadata>":{"element":1}
+,"within":{"<metadata>":1}
+,"<othermeta>":{"element":1}
+,"name":{"attribute":1}
+,"attribute":{"<othermeta>":1}
+,"topicalias":{"content":1}
+,"content":{"attribute":1}
+,"want":{"specify":1}
+,"specify":{"context-sensitive":1}
+}
+;Search.control.loadWordPairs(pairs);

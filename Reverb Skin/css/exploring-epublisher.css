@@ -1,0 +1,214 @@
+div.Title, caption.Title
+{
+  color: #17365D;
+  font-family: Cambria;
+  font-size: 18pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Body, caption.Body
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Child_Topics_Link_Pool_Open, caption.Child_Topics_Link_Pool_Open
+{
+  border-top-color: black;
+  border-top-style: solid;
+  border-top-width: 2pt;
+  font-family: Calibri;
+  font-size: 0;
+  font-weight: bold;
+  margin-bottom: 1pt;
+  margin-top: 1pt;
+}
+
+div.Child_Topics_Link_Pool_Close, caption.Child_Topics_Link_Pool_Close
+{
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 2pt;
+  font-family: Calibri;
+  font-size: 0;
+  font-weight: bold;
+  margin-bottom: 1pt;
+  margin-top: 1pt;
+}
+
+div.Child_Topic, caption.Child_Topic
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-left: 18pt;
+}
+
+div.Heading_1, caption.Heading_1
+{
+  color: #365F91;
+  font-family: Cambria;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Numbered_1, caption.Numbered_1
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 3pt;
+  margin-left: 18pt;
+  margin-top: 3pt;
+  text-indent: -18pt;
+}
+
+div.Numbered_1_Continued, caption.Numbered_1_Continued
+{
+  margin-left: 18pt;
+}
+
+div.tip, caption.tip
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Parent_Topics_Link_Pool_Open, caption.Parent_Topics_Link_Pool_Open
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+div.Parent_Topic, caption.Parent_Topic
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-left: 18pt;
+}
+
+div.List_1, caption.List_1
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+  text-indent: -18pt;
+}
+
+div.Step_1, caption.Step_1
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 3pt;
+  margin-left: 18pt;
+  margin-top: 3pt;
+  text-indent: -18pt;
+}
+
+div.Postrequisite, caption.Postrequisite
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Figure, caption.Figure
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Short_Description, caption.Short_Description
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Heading_2, caption.Heading_2
+{
+  color: #4F91BD;
+  font-family: Cambria;
+  font-size: 13pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Result, caption.Result
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Heading_3, caption.Heading_3
+{
+  color: #4F91BD;
+  font-family: Cambria;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Related_Concepts_Link_Pool_Open, caption.Related_Concepts_Link_Pool_Open
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+div.Related_Concept, caption.Related_Concept
+{
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-left: 18pt;
+}
+
+span.Bold, abbreviation.Bold, acronym.Bold, citation.Bold
+{
+  font-weight: bold;
+}
+
+span.Italic, abbreviation.Italic, acronym.Italic, citation.Italic
+{
+  font-style: italic;
+}
+
+span.Bold_002c_xref, abbreviation.Bold_002c_xref, acronym.Bold_002c_xref, citation.Bold_002c_xref
+{
+  font-weight: bold;
+}
+
+span.xref_002c_Bold, abbreviation.xref_002c_Bold, acronym.xref_002c_Bold, citation.xref_002c_Bold
+{
+  font-weight: bold;
+}
+
+span.Command_002c_Bold, abbreviation.Command_002c_Bold, acronym.Command_002c_Bold, citation.Command_002c_Bold
+{
+  font-weight: bold;
+}
+
+span.Command_002c_Italic, abbreviation.Command_002c_Italic, acronym.Command_002c_Italic, citation.Command_002c_Italic
+{
+  font-style: italic;
+}
+

@@ -1,0 +1,35 @@
+div.Normal, caption.Normal
+{
+  font-family: Calibri;
+  font-size: 11pt;
+  margin-bottom: 8pt;
+}
+
+div.Title, caption.Title
+{
+  font-family: "Calibri Light";
+  font-size: 28pt;
+  margin-bottom: 0pt;
+}
+
+span.Hyperlink, abbreviation.Hyperlink, acronym.Hyperlink, citation.Hyperlink
+{
+  color: #0563C1;
+  text-decoration: underline;
+}
+
+table.Table_Normal
+{
+  border-collapse: collapse;
+  margin-left: -5.4pt;
+  padding-bottom: 0pt;
+  padding-left: 5.4pt;
+  padding-right: 5.4pt;
+  padding-top: 0pt;
+}
+
+table.Table_Grid
+{
+  border-collapse: collapse;
+}
+
