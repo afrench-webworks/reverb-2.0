@@ -5,7 +5,7 @@
 //
 var Analytics = {};
 
-Analytics.ga_tracking_id = 'UA-1392910-1';
+Analytics.ga_tracking_id = 'UA-120069811-1';
 
 Analytics.event_type = '';
 Analytics.event_data = {};
@@ -41,10 +41,13 @@ Analytics.CaptureEvent = function () {
 
   switch (event_type) {
     case 'page_view':
-      Analytics.PageView(event_data.title, event_data.location, event_data.path);
+      Analytics.PageViewEvent(event_data.title, event_data.location, event_data.path);
+      break;
+    case 'search':
+      Analytics.SearchEvent(event_data.query);
       break;
     case 'search_page_view':
-      Analytics.PageViewFromSearchResult(event_data.title, event_data.location, event_data.path, event_data.query);
+      Analytics.PageViewFromSearchResultEvent(event_data.title, event_data.location, event_data.path, event_data.query);
       break;
     case 'page_click':
       Analytics.PageClickEvent();
@@ -52,8 +55,23 @@ Analytics.CaptureEvent = function () {
     case 'page_first_scroll':
       Analytics.PageFirstScrollEvent();
       break;
-    case 'toolbar_button_click':
-      Analytics.ToolbarButtonClickEvent();
+    case 'toolbar_button_menu_click':
+      Analytics.ToolbarButtonMenuClickEvent();
+      break;
+    case 'toolbar_button_search_click':
+      Analytics.ToolbarButtonSearchClickEvent();
+      break;
+    case 'toolbar_button_search_cancel_click':
+      Analytics.ToolbarButtonSearchCancelClickEvent();
+      break;
+    case 'toolbar_button_prev_click':
+      Analytics.ToolbarButtonPrevClickEvent();
+      break;
+    case 'toolbar_button_next_click':
+      Analytics.ToolbarButtonNextClickEvent();
+      break;
+    case 'toolbar_button_home_click':
+      Analytics.ToolbarButtonHomeClickEvent();
       break;
     case 'menu_click_toc':
       Analytics.MenuTOCClickEvent();
@@ -80,23 +98,29 @@ Analytics.ClearEventData = function () {
 
 // Track page view
 //
-Analytics.PageView = function (param_title, param_location, param_path) {
+Analytics.PageViewEvent = function (param_title, param_location, param_path) {
   'use strict';
 
   gtag('js', new Date());
-  gtag('config', Analytics.ga_tracking_id, { 'page_title': param_title, 'page_location': param_location, 'page_path': param_path });
+  gtag('event', 'page_view', { 'page_title': param_title, 'page_location': param_location, 'page_path': param_path });
+};
+
+// Track (Non-interactive) search event
+//
+Analytics.SearchEvent = function (param_query) {
+  'use strict';
+  gtag('js', new Date());
+  gtag('event', 'search', { 'search_term': param_query, 'event_category': 'engagement', 'non_interaction': true });
 };
 
 // Track page view that resulted from a search result click
 //
-Analytics.PageViewFromSearchResult = function (param_title, param_location, param_path, param_query) {
+Analytics.PageViewFromSearchResultEvent = function (param_title, param_location, param_path, param_query) {
   'use strict';
 
-  var path_query = param_path + '?q=' + param_query;
-
   gtag('js', new Date());
-  gtag('config', Analytics.ga_tracking_id, { 'page_title': param_title, 'page_location': param_location, 'page_path': path_query });
-  gtag('event', 'view_search_results', { 'event_label': param_query, 'event_category': 'engagement' });
+  gtag('event', 'page_view', { 'page_title': param_title, 'page_location': param_location, 'page_path': param_path, 'search_term': param_query });
+  gtag('event', 'view_search_results', { 'search_term': param_query, 'event_category': 'engagement' });
 };
 
 // Track page click event
@@ -117,13 +141,58 @@ Analytics.PageFirstScrollEvent = function () {
   gtag('event', 'scroll', { 'event_label': 'page content', 'event_category': 'engagement' });
 };
 
-// Track (Non-interactive) toolbar click event
+// Track (Non-interactive) menu button click event
 //
-Analytics.ToolbarButtonClickEvent = function () {
+Analytics.ToolbarButtonMenuClickEvent = function () {
   'use strict';
 
   gtag('js', new Date());
-  gtag('event', 'click', { 'event_label': 'toolbar button', 'event_category': 'engagement', 'non_interaction': true });
+  gtag('event', 'click', { 'event_label': 'toolbar button - menu', 'event_category': 'engagement', 'non_interaction': true });
+};
+
+// Track (Non-interactive) search button click event
+//
+Analytics.ToolbarButtonSearchClickEvent = function () {
+  'use strict';
+
+  gtag('js', new Date());
+  gtag('event', 'click', { 'event_label': 'toolbar button - search', 'event_category': 'engagement', 'non_interaction': true });
+};
+
+// Track (Non-interactive) search cancel button click event
+//
+Analytics.ToolbarButtonSearchCancelClickEvent = function () {
+  'use strict';
+
+  gtag('js', new Date());
+  gtag('event', 'click', { 'event_label': 'toolbar button - search cancel', 'event_category': 'engagement', 'non_interaction': true });
+};
+
+// Track (Non-interactive) previous button click event
+//
+Analytics.ToolbarButtonPrevClickEvent = function () {
+  'use strict';
+
+  gtag('js', new Date());
+  gtag('event', 'click', { 'event_label': 'toolbar button - previous', 'event_category': 'engagement', 'non_interaction': true });
+};
+
+// Track (Non-interactive) next button click event
+//
+Analytics.ToolbarButtonNextClickEvent = function () {
+  'use strict';
+
+  gtag('js', new Date());
+  gtag('event', 'click', { 'event_label': 'toolbar button - next', 'event_category': 'engagement', 'non_interaction': true });
+};
+
+// Track (Non-interactive) home button click event
+//
+Analytics.ToolbarButtonHomeClickEvent = function () {
+  'use strict';
+
+  gtag('js', new Date());
+  gtag('event', 'click', { 'event_label': 'toolbar button - home', 'event_category': 'engagement', 'non_interaction': true });
 };
 
 // Track (Non-interactive) menu click event
@@ -153,12 +222,4 @@ Analytics.TopicLookupEvent = function (param_context, param_topic_alias) {
 
   gtag('js', new Date());
   gtag('event', 'topic lookup', { 'event_label': context_topic, 'event_category': 'engagement', 'non_interaction': true });
-};
-
-// Track (Non-interactive) search event
-//
-Analytics.SearchEvent = function (param_query) {
-  'use strict';
-  gtag('js', new Date());
-  gtag('event', 'search', { 'event_label': param_query, 'event_category': 'engagement', 'non_interaction': true });
 };

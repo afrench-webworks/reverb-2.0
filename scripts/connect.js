@@ -2031,11 +2031,6 @@ Connect.ToolbarLink = function (param_event) {
     Scope.CloseDropDown();
   }
 
-  if (Connect.google_analytics_enabled) {
-    Analytics.event_type = 'toolbar_button_click';
-    Analytics.CaptureEvent();
-  }
-
   // Process event
   //
   result = Connect.HandleToolbarLink(this);
@@ -2853,6 +2848,8 @@ Connect.Listen = function (param_event) {
         Connect.OnDocumentUnload();
       },
       'page_size': function (param_data) {
+        var data;
+
         if (Connect.page_info !== undefined) {
           // Clear fallback, if present
           //
@@ -2988,8 +2985,8 @@ Connect.Listen = function (param_event) {
       'search_complete': function (param_data) {
         // Update search words
         //
-        Connect.search_query = param_data.query;
-        Connect.search_synonyms = param_data.synonyms;
+        //Connect.search_query = param_data.query;
+        //Connect.search_synonyms = param_data.synonyms;
 
         // Update dimensions
         //
@@ -2998,6 +2995,20 @@ Connect.Listen = function (param_event) {
         // Adjust layout for search content
         //
         Connect.AdjustForSearchContentSize();
+
+        console.log('search complete');
+        setTimeout(function () {
+
+          if (Connect.google_analytics_enabled && Connect.search_query == param_data.query) {
+            Analytics.event_type = 'page_click';
+            Analytics.event_data = {
+              'query': param_data.query
+            };
+            Analytics.CaptureEvent();
+          }
+
+          console.log('search event logged for: ' + param_data.query);
+        }, 5000);
       },
       'search_page_size': function (param_data) {
         var data;
@@ -3355,6 +3366,11 @@ Connect.Button_Home = function () {
     // Go to default page
     //
     Connect.DisplayPage(Connect.default_page_url, true);
+
+    if (Connect.google_analytics_enabled) {
+      Analytics.event_type = 'toolbar_button_home_click';
+      Analytics.CaptureEvent();
+    }
   }
 };
 
@@ -3649,10 +3665,18 @@ Connect.Button_Search = function () {
     // Do the search
     //
     Connect.HandleSearchURL();
+    if (Connect.google_analytics_enabled) {
+      Analytics.event_type = 'toolbar_button_search_click';
+      Analytics.CaptureEvent();
+    }
   } else {
     // Go back to the content page
     //
     Connect.BackToCurrentPage();
+    if (Connect.google_analytics_enabled) {
+      Analytics.event_type = 'toolbar_button_search_cancel_click';
+      Analytics.CaptureEvent();
+    }
   }
 };
 
@@ -3723,6 +3747,11 @@ Connect.Button_Menu_Toggle = function () {
   else {
     Connect.Menu.Show();
   }
+
+  if (Connect.google_analytics_enabled) {
+    Analytics.event_type = 'toolbar_button_menu_click';
+    Analytics.CaptureEvent();
+  }
 };
 
 Connect.GetPrevNext = function (param_prevnext) {
@@ -3768,6 +3797,11 @@ Connect.Button_Previous = function () {
     }
 
     Connect.GotoPrevNext('Prev');
+
+    if (Connect.google_analytics_enabled) {
+      Analytics.event_type = 'toolbar_button_prev_click';
+      Analytics.CaptureEvent();
+    }
   }
 };
 
@@ -3784,6 +3818,11 @@ Connect.Button_Next = function () {
     }
 
     Connect.GotoPrevNext('Next');
+
+    if (Connect.google_analytics_enabled) {
+      Analytics.event_type = 'toolbar_button_next_click';
+      Analytics.CaptureEvent();
+    }
   }
 };
 
@@ -3849,8 +3888,8 @@ Connect.Button_PDF = function () {
 Connect.ScrollTo = function (x, y) {
   'use strict';
 
-  Connect.container_div.scrollTop = x;
-  Connect.container_div.scrollLeft = y;
+  Connect.container_div.scrollLeft = x;
+  Connect.container_div.scrollTop = y;
 };
 
 Connect.SearchEnabled = function () {
