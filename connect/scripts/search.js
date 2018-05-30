@@ -217,9 +217,8 @@ Search.InBrowser_Object = function () {
       }
 
       if (Search.control.progress.Done()) {
-        this.execute(Search.query);
-        Search.executing = false;
-        Search.cancel = false;
+        Search.query = Search.connect_info.query;
+        Search.Execute(Search.query);
       }
     }
   };
@@ -857,7 +856,7 @@ Search.InBrowser_Object = function () {
     }
 
     data = {
-      'action': 'search_complete',
+      'action': 'search_clear_results_complete',
       'query': Search.query,
       'dimensions': Browser.GetWindowContentWidthHeight(Search.window)
     };
@@ -879,18 +878,21 @@ Search.Execute = function (param_query) {
 
   var search_input;
 
-  // Update search words
-  //
-  if (Search.executing && (Search.query !== param_query)) {
-    Search.cancel = true;
-  }
-  if (param_query !== undefined) {
-    Search.query = param_query;
-  }
-
   // Check for a search query string and execute it
   //
   if (Search.control.progress.Done()) {
+    // Update search words
+    //
+    //if (param_query === Search.query) {
+      //return;
+    //}
+    if (Search.executing && (Search.query !== param_query)) {
+      Search.cancel = true;
+    }
+    if (param_query !== undefined) {
+      Search.query = param_query;
+    }
+
     if (Search.query !== '') {
       if (Search.executing) {
         // Try again while search cancels
@@ -938,9 +940,9 @@ Search.Listen = function (param_event) {
 
         // Load Search Data
         //
-        if (this.data_queue === undefined) {
-          Search.control.loadDataQueue();
-        }
+        //if (this.data_queue === undefined) {
+        //  Search.control.loadDataQueue();
+        //}
 
         // Load filter message
         //

@@ -454,6 +454,25 @@ Connect.OnLoadAction = function () {
     }
   }
 
+  // Set up search reporting for Analytics
+  //
+  if (Connect.google_analytics_enabled) {
+    Connect.search_input.onblur = function () {
+      var search_input_value;
+
+      search_input_value = Connect.search_input.value;
+
+      if (search_input_value.length >= Connect.search_query_minimum_length) {
+        Analytics.event_type = 'search';
+        Analytics.event_data = {
+          'query': Connect.search_input.value
+        };
+        Analytics.CaptureEvent();
+        console.log('reported search for "' + search_input_value + '".');
+      }
+    }
+  }
+
   // Scroll Events
   //
   Connect.container_div.onscroll = function () {
@@ -2982,12 +3001,7 @@ Connect.Listen = function (param_event) {
           Message.Post(Connect.search_iframe.contentWindow, data, Connect_Window);
         }
       },
-      'search_complete': function (param_data) {
-        // Update search words
-        //
-        //Connect.search_query = param_data.query;
-        //Connect.search_synonyms = param_data.synonyms;
-
+      'search_clear_results_complete': function (param_data) {
         // Update dimensions
         //
         Connect.search_page_info.dimensions = param_data.dimensions;
@@ -2995,20 +3009,15 @@ Connect.Listen = function (param_event) {
         // Adjust layout for search content
         //
         Connect.AdjustForSearchContentSize();
+      },
+      'search_complete': function (param_data) {
+        // Update dimensions
+        //
+        Connect.search_page_info.dimensions = param_data.dimensions;
 
-        console.log('search complete');
-        setTimeout(function () {
-
-          if (Connect.google_analytics_enabled && Connect.search_query == param_data.query) {
-            Analytics.event_type = 'page_click';
-            Analytics.event_data = {
-              'query': param_data.query
-            };
-            Analytics.CaptureEvent();
-          }
-
-          console.log('search event logged for: ' + param_data.query);
-        }, 5000);
+        // Adjust layout for search content
+        //
+        Connect.AdjustForSearchContentSize();
       },
       'search_page_size': function (param_data) {
         var data;

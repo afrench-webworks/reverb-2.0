@@ -118,6 +118,8 @@ Analytics.SearchEvent = function (param_query) {
 Analytics.PageViewFromSearchResultEvent = function (param_title, param_location, param_path, param_query) {
   'use strict';
 
+  var path_and_query = param_path + '?q=' + param_query;
+
   gtag('js', new Date());
   gtag('event', 'page_view', { 'page_title': param_title, 'page_location': param_location, 'page_path': param_path, 'search_term': param_query });
   gtag('event', 'view_search_results', { 'search_term': param_query, 'event_category': 'engagement' });
